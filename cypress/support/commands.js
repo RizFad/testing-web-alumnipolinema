@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (email, pass) => {
+    cy.visit('https://alumni.polinema.ac.id/');
+    cy.get('input[name="usernamealumni"]').type('1941720112');
+    cy.get('input[name="passwordalumni"]').type('1941720112');
+    cy.get('input[type="submit"]').click();
+})
